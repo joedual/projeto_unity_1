@@ -50,4 +50,13 @@ public class ControleInimigo : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<ControleJogador>().DanoNaNave(100);
+            Destroy(this.gameObject);
+        }
+    }
 }
