@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControleJogador : MonoBehaviour
 {
     public float velocidadeDaNave;
+    public int vida;
     public Rigidbody2D rig;
     private Vector2 comando;
     public Transform localDoDisparoUnico;
@@ -39,8 +40,15 @@ public class ControleJogador : MonoBehaviour
                 Instantiate(laser, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
             }
         }
-        {
+    }
 
+    public void DanoNaNave(int dano)
+    {
+        vida -= dano;
+        if (vida <= 0)
+        {
+            Destroy(this.gameObject);
+            Debug.Log("Fim de Jogo");
         }
     }
 }

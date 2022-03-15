@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControleInimigo : MonoBehaviour
 {
     public float velocidadeDaNave;
+    public int vidaDaNave;
     public Transform localDoDisparo;
     public GameObject laser;
     public float tempoMaximoEntreOsLasers;
@@ -38,6 +39,15 @@ public class ControleInimigo : MonoBehaviour
         {
             Instantiate(laser, localDoDisparo.position, Quaternion.Euler(0f, 0f, 90f));
             tempoAtualDoLaser = tempoMaximoEntreOsLasers;
+        }
+    }
+
+    public void DanoNaNave(int dano)
+    {
+        vidaDaNave -= dano;
+        if (vidaDaNave <= 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 }

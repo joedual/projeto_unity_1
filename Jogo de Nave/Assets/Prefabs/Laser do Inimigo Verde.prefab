@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 8
+  dano: 2
 --- !u!114 &6294479100216898684
 MonoBehaviour:
   m_ObjectHideFlags: 0
