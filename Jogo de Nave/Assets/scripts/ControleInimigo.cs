@@ -11,10 +11,11 @@ public class ControleInimigo : MonoBehaviour
     public float tempoMaximoEntreOsLasers;
     public float tempoAtualDoLaser;
     public bool atirador;
+    public bool laserAtivado;
     // Start is called before the first frame update
     void Start()
     {
-        
+        laserAtivado = false;
     }
 
     // Update is called once per frame
@@ -32,10 +33,15 @@ public class ControleInimigo : MonoBehaviour
         }
     }
 
+    public void AtivarLaser()
+    {
+        laserAtivado = true;
+    }
+
     private void dispararLaser()
     {
         tempoAtualDoLaser -= Time.deltaTime;
-        if (tempoAtualDoLaser <= 0)
+        if (tempoAtualDoLaser <= 0 && laserAtivado == true)
         {
             Instantiate(laser, localDoDisparo.position, Quaternion.Euler(0f, 0f, 90f));
             tempoAtualDoLaser = tempoMaximoEntreOsLasers;
