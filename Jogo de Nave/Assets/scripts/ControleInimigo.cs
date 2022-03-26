@@ -51,8 +51,10 @@ public class ControleInimigo : MonoBehaviour
     public void DanoNaNave(int dano)
     {
         vidaDaNave -= dano;
+        EfeitosSonoros.instance.somDeImpactoLaser.Play();
         if (vidaDaNave <= 0)
         {
+            EfeitosSonoros.instance.somDeExplosao.Play();
             Destroy(this.gameObject);
         }
     }
@@ -62,6 +64,7 @@ public class ControleInimigo : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<ControleJogador>().DanoNaNave(100);
+            EfeitosSonoros.instance.somDeExplosao.Play();
             Destroy(this.gameObject);
         }
     }

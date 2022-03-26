@@ -10,15 +10,9 @@ public class EfeitosSonoros : MonoBehaviour
     public AudioSource somDeImpactoLaser;
     public AudioSource somDoLaser;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

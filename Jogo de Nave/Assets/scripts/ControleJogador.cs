@@ -37,6 +37,7 @@ public class ControleJogador : MonoBehaviour
         {
             if (disparoDuplo == false)
             {
+                EfeitosSonoros.instance.somDoLaser.Play();
                 Instantiate(laser, localDoDisparoUnico.position, localDoDisparoUnico.rotation);
             }
         }
@@ -45,8 +46,10 @@ public class ControleJogador : MonoBehaviour
     public void DanoNaNave(int dano)
     {
         vida -= dano;
+        EfeitosSonoros.instance.somDeImpactoLaser.Play();
         if (vida <= 0)
         {
+            EfeitosSonoros.instance.somDeExplosao.Play();
             Destroy(this.gameObject);
             Debug.Log("Fim de Jogo");
         }
