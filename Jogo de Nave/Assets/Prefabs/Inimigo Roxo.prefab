@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadeDaNave: 10
   vidaDaNave: 3
+  pontos: 20
   localDoDisparo: {fileID: 0}
   laser: {fileID: 0}
   tempoMaximoEntreOsLasers: 0

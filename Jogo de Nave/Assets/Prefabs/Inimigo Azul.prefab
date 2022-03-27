@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadeDaNave: 4
   vidaDaNave: 4
+  pontos: 10
   localDoDisparo: {fileID: 5558252261311983332}
   laser: {fileID: 6742320083501270913, guid: daafa0728eb89034ba00c5924d5b5fb9, type: 3}
   tempoMaximoEntreOsLasers: 3

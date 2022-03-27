@@ -6,6 +6,7 @@ public class ControleInimigo : MonoBehaviour
 {
     public float velocidadeDaNave;
     public int vidaDaNave;
+    public int pontos;
     public Transform localDoDisparo;
     public GameObject laser;
     public float tempoMaximoEntreOsLasers;
@@ -57,6 +58,7 @@ public class ControleInimigo : MonoBehaviour
         {
             EfeitosSonoros.instance.somDeExplosao.Play();
             Instantiate(animacaoExplosao, transform.position, transform.rotation);
+            GameManager.instance.IncrementoPontos(pontos);
             Destroy(this.gameObject);
         }
     }

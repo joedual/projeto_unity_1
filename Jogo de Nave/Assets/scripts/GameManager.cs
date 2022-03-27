@@ -1,25 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int pontuacao;
-    // Start is called before the first frame update
-    void Start()
+    public Text textoDePontuacao;
+
+    void Awake()
     {
-        
+        instance = this;    
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
-        
+        pontuacao = 0;
+        textoDePontuacao.text = "" + pontuacao;
     }
 
     public void IncrementoPontos(int pontos)
     {
         pontuacao += pontos;
+        textoDePontuacao.text = ""+pontuacao;
     }
 }
