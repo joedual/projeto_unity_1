@@ -173,3 +173,4 @@ MonoBehaviour:
   tempoAtualDoLaser: 0
   atirador: 1
   laserAtivado: 0
+  animacaoExplosao: {fileID: 732454844821965025, guid: 0cd6f6cf70850354eb63d68f87b8ee8d, type: 3}

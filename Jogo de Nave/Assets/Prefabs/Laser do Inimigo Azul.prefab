@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 12
   dano: 1
+  animacaoImpactoDoLaser: {fileID: 6335205482591220356, guid: f692f3a882d66ed4f87351034470e3ea, type: 3}
 --- !u!114 &-171158615710028789
 MonoBehaviour:
   m_ObjectHideFlags: 0

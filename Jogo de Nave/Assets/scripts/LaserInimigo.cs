@@ -7,6 +7,8 @@ public class LaserInimigo : MonoBehaviour
     public float velocidade;
     public int dano;
 
+    public GameObject animacaoImpactoDoLaser;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class LaserInimigo : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<ControleJogador>().DanoNaNave(dano);
+            Instantiate(animacaoImpactoDoLaser, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
     }

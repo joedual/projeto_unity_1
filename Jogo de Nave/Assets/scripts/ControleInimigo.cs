@@ -12,6 +12,7 @@ public class ControleInimigo : MonoBehaviour
     public float tempoAtualDoLaser;
     public bool atirador;
     public bool laserAtivado;
+    public GameObject animacaoExplosao;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +56,7 @@ public class ControleInimigo : MonoBehaviour
         if (vidaDaNave <= 0)
         {
             EfeitosSonoros.instance.somDeExplosao.Play();
+            Instantiate(animacaoExplosao, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
     }
@@ -65,6 +67,7 @@ public class ControleInimigo : MonoBehaviour
         {
             collision.gameObject.GetComponent<ControleJogador>().DanoNaNave(100);
             EfeitosSonoros.instance.somDeExplosao.Play();
+            Instantiate(animacaoExplosao, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
     }
